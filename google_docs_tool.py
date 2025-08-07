@@ -108,8 +108,16 @@ class GoogleDocsTool(BaseTool):
     def _run(self, tweet_text: str, doc_title: str = None) -> str:
         try:
             # Sanitize tweet text to avoid emoji-related encoding issues
-            tweet_text = tweet_text.encode("ascii", "ignore").decode("utf-8", errors="ignore")
-
+            tweet_text = tweet_text.encode("utf-8").decode("utf-8")
+            # Add Tweet 1 / Tweet 2 if not present
+            tweets = tweet_text.strip().split("\n\n")
+            if len(tweets) >= 2 and not tweets[0].lower().startswith("tweet"):
+                tweet_1 = f"Tweet 1:\n{tweets[0].strip()}\n\n"
+                tweet_2 = f"Tweet 2:\n{tweets[1].strip()}\n\n"
+                tweet_block = tweet_1 + tweet_2
+            else:
+                tweet_block = tweet_text.strip()
+    
             # Authenticate
             service, error = self._authenticate()
             if error:
@@ -123,7 +131,7 @@ class GoogleDocsTool(BaseTool):
 
             today = datetime.now().strftime("[Date] %Y-%m-%d %H:%M:%S")
             separator = "\n" + "─" * 60 + "\n"
-            content = f"{separator}{today}\n\n{tweet_text.strip()}\n\n"
+            content = f"{separator}{today}\n\n{tweet_block}\n"
 
             requests = [{
                 'insertText': {
