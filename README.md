@@ -77,18 +77,6 @@ Watch as the AI crew:
 | `SERPER_API_KEY` | Serper.dev API key for search | ✅ |
 | `GOOGLE_DOC_ID` | Fixed Google Doc ID (optional) | ❌ |
 
-### Google Docs Setup
-
-1. Run the setup script:
-   ```bash
-   python setup_google_docs.py
-   ```
-
-2. Follow the interactive instructions to:
-   - Enable Google Docs & Drive APIs
-   - Create OAuth credentials
-   - Authenticate with Google
-
 ## 📁 Project Structure
 
 ```
