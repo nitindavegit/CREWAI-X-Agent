@@ -6,6 +6,7 @@
 .env
 credentials.json
 token.json
+setup_google_docs.py
 
 # === PYTHON FILES ===
 # Byte-compiled / optimized / DLL files
@@ -142,3 +143,4 @@ uv.lock
 .Trashes
 ehthumbs.db
 Thumbs.db
+
