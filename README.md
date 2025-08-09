@@ -53,12 +53,6 @@
    GOOGLE_DOC_ID=your_google_doc_id  # Optional
    ```
 
-4. **Configure Google Docs integration:**
-   ```bash
-   python setup_google_docs.py
-   ```
-   Follow the prompts to authenticate with Google.
-
 ### Usage
 
 Run ByteBrief to generate and archive your first tech thread:
