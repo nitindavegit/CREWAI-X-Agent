@@ -1,7 +1,7 @@
 [project]
-name = "bytebrief"
+name = "bytebrief-crew"
 version = "0.1.0"
-description = "Add your description here"
+description = "It is a script when run can generate 2 Tweet style Twitter thread related to Tech, Startup and Business"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
